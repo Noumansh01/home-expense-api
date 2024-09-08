@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 4000;
-const userRoutes = require("./routes/auth/userRoute.js");
+const {Router}= require("./routes/auth/userRoute");
 
-app.use("/api/user",userRoutes );
+app.use("/api/user",Router );
 
 
 app.get("/", (req , res)=>{
