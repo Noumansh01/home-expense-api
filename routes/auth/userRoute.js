@@ -5,7 +5,7 @@ const {userRegister}= require("../../controller/Auth/userAuth");
 
 
 
-Router.post("/login", userLogin);
-Router.post("/register",userRegister);
+Router.get("/login", userLogin);
+Router.get("/register",userRegister);
 
 module.exports = {Router};
