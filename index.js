@@ -4,6 +4,7 @@ import 'dotenv/config';
 const port = process.env.PORT || 4000;
 import userRouter from "./src/routes/auth/userRoute.js";
 import itemRouter from "./src/routes/items/itemsRoute.js";
+import shoppingRouter from "./src/routes/shoppingList/shoppingListRoute.js";
 
 // middleware to parse JSON bodies
 app.use(express.json());
@@ -14,6 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 // middleware to parse route to routes folder 
 app.use("/api/user",userRouter );
 app.use("/api/item",itemRouter );
+app.use("/api/shopping",shoppingRouter );
 
 
 app.get("/", (req , res)=>{
