@@ -1,7 +1,7 @@
 import express from "express";
 const app = express();
 const port = process.env.PORT || 4000;
-import Router from "./routes/auth/userRoute.js";
+import Router from "./src/routes/auth/userRoute.js";
 
 app.use("/api/user",Router );
 
