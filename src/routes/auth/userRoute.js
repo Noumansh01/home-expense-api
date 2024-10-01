@@ -4,8 +4,8 @@ import {userLogin,userRegister} from"../../controller/Auth/userAuth.js";
 
 
 
+Router.post("/register",userRegister);
+Router.post("/login", userLogin);
 
-Router.get("/login", userLogin);
-Router.get("/register",userRegister);
 
 export default Router;
