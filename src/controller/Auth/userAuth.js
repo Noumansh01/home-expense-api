@@ -1,20 +1,32 @@
 
 export const userRegister = (req , res)=>{
-    const {name,password ,cpassword}= req.body;
-    if(!name ||!password ||!cpassword){
-        res.send("please enter data");
+    const {fname, email,password}= req.body;
+    if(!fname ||!email ||!password){
+        
+        res.status(400).json("All fields are require");
         
     }
-    else{
-    console.log(name, password,cpassword);
     
-    res.send(`Name= ${name} Password= ${password} cpassword=${cpassword} `);
-}
+    console.log(fname, email, password);
+    
+    res.status(201).json(`fname= ${fname} email= ${email} password=${password} `);
+
     };
 
 export const userLogin = (req , res)=>{
-res.send("hello i am login");
-};
+    const {email,password}= req.body;
+    if(!email ||!password){
+        
+        res.status(400).json("All fields are require");
+        
+    }
+    
+    console.log(email, password);
+    
+    res.status(201).json(`email= ${email} password=${password} `);
+
+    };
+
 
 
 
