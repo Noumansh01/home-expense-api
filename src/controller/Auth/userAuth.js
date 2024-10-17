@@ -1,5 +1,5 @@
-
-export const userRegister = (req , res)=>{
+import {user} from "../../model/userSchema.js";
+export const userRegister = async (req , res)=>{
     const {fname, email,password}= req.body;
     if(!fname ||!email ||!password){
         
@@ -8,6 +8,13 @@ export const userRegister = (req , res)=>{
     }
     
     console.log(fname, email, password);
+
+    const insertUser=  await new user({
+        username:fname,
+        email: email,
+        password: password
+    });
+    insertUser.save();
     
     res.status(201).json(`fname= ${fname} email= ${email} password=${password} `);
 

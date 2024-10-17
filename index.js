@@ -7,6 +7,7 @@ import shoppingRouter from "./src/routes/shoppingList/shoppingListRoute.js";
 import {connect_db} from "./src/db/connection.js";
 
 
+
 const port = process.env.PORT || 4000;
 
 // middleware to parse JSON bodies
